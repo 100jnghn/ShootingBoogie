@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public UIManager uiManager;
+    public DataManager dataManager;
 
     public GameObject player;
 
@@ -12,7 +13,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        // 타임스케일 1로 설정
+        // 게임 종료 시 0으로 설정하기 때문에 다시 시작하면 0으로 돼있음
+        // 따라서 시작할 때마다 1로 초기화 해줘야함
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -30,7 +34,20 @@ public class GameManager : MonoBehaviour
 
     public void gameEnd()
     {
+        bool isHighScore = false;
+
+        // 최고 기록 갱신 시
+        if (score > dataManager.getHighScore())
+        {
+            // 현재 score로 내 최고 기록 갱신
+            dataManager.updateHighScore(score);
+
+            // 최고 기록 갱신 flag를 true로 설정
+            isHighScore = true;
+        }
+
         // 서버에 데이터 전송
+        dataManager.insertData(score);
 
 
 
@@ -45,6 +62,16 @@ public class GameManager : MonoBehaviour
 
         // 게임 종료 UI 띄우는 함수 호출
         uiManager.manageEndPanel(true);
+
+        // 최고 기록 갱신이라면 최고 기록 패널 띄우는 함수 호출
+        if (isHighScore)
+        {
+            uiManager.manageHighScorePanel(true);
+        }
+        else
+        {
+            uiManager.manageHighScorePanel(false);
+        }
 
         // 최종 점수 UI에 반영
         uiManager.updateFinalScore(score);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class UIManager : MonoBehaviour
     [Header("----- Panels")]
     public GameObject panelEnd;
     public GameObject panelMain;
+    public GameObject panelHighScore;
 
     [Header ("----- Button Attack -----")]
     public Button btnFire;
@@ -48,6 +50,11 @@ public class UIManager : MonoBehaviour
     {
         panelMain.SetActive(v);
     }
+
+    public void manageHighScorePanel(bool v)
+    {
+        panelHighScore.SetActive(v);
+    }
     
 
 
@@ -62,6 +69,25 @@ public class UIManager : MonoBehaviour
         isFireButtonDown = false;
     }
 
+
+
+    // ----- 버튼 기능 관리 ----- //
+    // 다시하기 버튼
+    public void retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // 종료 버튼
+    public void quit()
+    {
+        Application.Quit();
+
+        // 에디터에서 Play 모드를 종료
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+    }
 
 
     // ----- 텍스트 관리 ----- //
