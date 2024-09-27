@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 660911240, guid: f624596d5fe1bd5459a5da424a8abc1b, type: 3}
+  m_Name: TheBackendSettings
+  m_EditorClassIdentifier: 
+  clientAppID: 05bae470-7caf-11ef-892c-9517c0ab01a88458
+  signatureKey: 05bb0b80-7caf-11ef-892c-9517c0ab01a88458
+  functionAuthKey: 
+  packageName: com.DefaultCompany.2DProject
+  sendLogReport: 1
+  timeOutSec: 100
+  Version: 5.13.0
+  autoRefreshToken: 1
+  retryWhenClientRequestFailError: 1
+  retryWhenServerError: 1
+  initFailWhenDeviceIdUnknown: 0
+  autoLoadLocationProperties: 1
+  waitUntilInitializeFinish: 1
