@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public UIManager uiManager;
     public DataManager dataManager;
 
+    public AudioSource sfxEnding;
+
     public GameObject player;
 
     public int score = 0;   // 점수 기록
@@ -49,7 +51,8 @@ public class GameManager : MonoBehaviour
         // 서버에 데이터 전송
         dataManager.insertData(score);
 
-
+        // 게임 종료 알림음 재생
+        sfxEnding.Play();
 
         // 타임스케일 제로
         Time.timeScale = 0f;
