@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public Transform firePos;   // 투사체 생성 위치
     public GameObject bullet;   // 공격시 생성하는 투사체
 
+    [Header("Sounds")]
+    public AudioSource sfxFire;   // 공격 소리 이펙트
+
     [Header("----- Attack -----")]
     public float attackTime;
     private float currentTime;
@@ -56,7 +59,8 @@ public class Player : MonoBehaviour
             return;
         }
 
-        Instantiate(bullet, firePos);
+        Instantiate(bullet, firePos);   // bullet 생성
+        sfxFire.Play();                 // sound 재생
         
         currentTime = 0;
         isAttackable = false;
