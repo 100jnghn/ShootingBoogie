@@ -16,6 +16,8 @@ public class BackendManager : MonoBehaviour
     public Text txtCreateAccountID;
     public Text txtCreateAccountPW;
 
+    public Text txtHashKey;
+
 
 
     private void Awake()
@@ -33,6 +35,18 @@ public class BackendManager : MonoBehaviour
         {
             // 실패 -> statusCode 4nn
             Debug.LogError("초기화 실패! " + bro);
+        }
+
+        // 구글 해시키 획득 
+        if (!Backend.Utils.GetGoogleHash().Equals(""))
+        {
+            string googlehash = Backend.Utils.GetGoogleHash();
+            Debug.Log("Google Hash : " + googlehash);
+            txtHashKey.text = googlehash;
+        }
+        else
+        {
+            Debug.Log("No Google Hash");
         }
     }
 

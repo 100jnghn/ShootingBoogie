@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             return;
         }
 
-        Instantiate(bullet, firePos);   // bullet 持失
+        Instantiate(bullet, firePos.position, firePos.rotation, null);   // bullet 持失
         sfxFire.Play();                 // sound 仙持
         
         currentTime = 0;
