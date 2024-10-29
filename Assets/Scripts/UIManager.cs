@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     public GameManager gameManager;
     public Player player;
 
+    [Header("----- Screen Ratio-----")]
+    public int width;
+    public int height;
+
     [Header("----- Panels")]
     public GameObject panelEnd;
     public GameObject panelMain;
@@ -26,9 +30,9 @@ public class UIManager : MonoBehaviour
 
 
 
-    void Start()
+    private void Awake()
     {
-        
+        setScreen();
     }
 
     void Update()
@@ -38,6 +42,18 @@ public class UIManager : MonoBehaviour
             //Debug.Log("Fire!");
             player.doFire();
         }
+    }
+
+    void setScreen()
+    {
+        // 화면 비율 설정, 전체 화면 설정
+        Screen.SetResolution(width, height, true);
+
+        // 화면 꺼지지 않도록 설정
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        // 화면 방향 설정 
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
     }
 
     // ----- 패널 관리 ----- //

@@ -4,9 +4,30 @@ using UnityEngine;
 
 public class LogInSceneManager : MonoBehaviour
 {
+    [Header("----- Screen Ratio -----")]
+    public int width;
+    public int height;
+
     [Header ("----- Panels -----")]
     public GameObject panelLogIn;
     public GameObject panelCreateAccount;
+
+    private void Awake()
+    {
+        setScreen();
+    }
+
+    void setScreen()
+    {
+        // 화면 비율 설정, 전체 화면 설정
+        Screen.SetResolution(width, height, true);
+
+        // 화면 꺼지지 않도록 설정
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        // 화면 방향 설정 
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+    }
 
     // 로그인 화면으로 가는 버튼 클릭
     public void onClickGotoLogIn()

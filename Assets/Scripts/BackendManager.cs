@@ -91,6 +91,9 @@ public class BackendManager : MonoBehaviour
 
             // 회원가입에 성공하면 이어서 이름도 설정한다
             UpdateNickname();
+
+            // 바로 로그인까지??
+
         }
         else
         {
@@ -108,6 +111,8 @@ public class BackendManager : MonoBehaviour
                     break;
             }
         }
+
+        
     }
 
     // 로그인
