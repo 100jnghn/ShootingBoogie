@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;  // µÚ³¡ Backend SDK
 
 public class BackendManager : MonoBehaviour
 {
+    [Header("----- Associations -----")]
+    public LogInSceneManager logInSceneManager;
+
     [Header("----- Log In Components -----")]
     public Text txtLogInID;
     public Text txtLogInPW;
@@ -42,11 +45,14 @@ public class BackendManager : MonoBehaviour
         {
             string googlehash = Backend.Utils.GetGoogleHash();
             Debug.Log("Google Hash : " + googlehash);
+            
             txtHashKey.text = googlehash;
         }
         else
         {
             Debug.Log("No Google Hash");
+
+            txtHashKey.text = "No Google Hash";
         }
     }
 

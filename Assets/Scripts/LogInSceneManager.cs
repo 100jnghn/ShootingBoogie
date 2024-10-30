@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LogInSceneManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class LogInSceneManager : MonoBehaviour
     [Header ("----- Panels -----")]
     public GameObject panelLogIn;
     public GameObject panelCreateAccount;
+    public GameObject panelErrorMessage;
+
+    [Header("----- Texts -----")]
+    public Text txtError;
 
     private void Awake()
     {
@@ -41,5 +46,17 @@ public class LogInSceneManager : MonoBehaviour
     {
         panelLogIn.SetActive(false);
         panelCreateAccount.SetActive(true);
+    }
+
+    // 에러 메시지 확인 버튼
+    public void onClickErrorOK()
+    {
+        panelErrorMessage.SetActive(false);
+    }
+
+    // 팝업 메시지 띄우는 함수
+    public void showPopUp(string msg)
+    {
+        txtError.text = msg;
     }
 }
