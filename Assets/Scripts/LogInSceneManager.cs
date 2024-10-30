@@ -58,5 +58,6 @@ public class LogInSceneManager : MonoBehaviour
     public void showPopUp(string msg)
     {
         txtError.text = msg;
+        panelErrorMessage.SetActive(true);
     }
 }

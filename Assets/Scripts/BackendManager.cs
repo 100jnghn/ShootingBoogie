@@ -79,6 +79,8 @@ public class BackendManager : MonoBehaviour
             txtCreateAccountID.text.Length <= 0 ||
             txtCreateAccountPW.text.Length <= 0)
         {
+            logInSceneManager.showPopUp("ID 혹은 Password를 입력하세요!");
+
             return;
         }
         
@@ -110,10 +112,14 @@ public class BackendManager : MonoBehaviour
             {
                 case "409":
                     Debug.Log("중복된 id가 존재");
+                    logInSceneManager.showPopUp("이미 존재하는 ID입니다!");
+
                     break;
 
                 case "403":
                     Debug.Log("출시설정이 테스트인데 AU가 10을 초과");
+                    logInSceneManager.showPopUp("서버 오류..!");
+
                     break;
             }
         }
@@ -130,6 +136,8 @@ public class BackendManager : MonoBehaviour
         if (txtLogInID.text.Length <= 0 ||
             txtLogInPW.text.Length <= 0)
         {
+            logInSceneManager.showPopUp("ID 혹은 Password를 입력하세요!");
+
             return;
         }
 
@@ -157,10 +165,14 @@ public class BackendManager : MonoBehaviour
             {
                 case "401":
                     Debug.Log("존재하지 않는 id or 틀린 password 입력");
+                    logInSceneManager.showPopUp("존재하지 않는 ID 이거나\n올바르지 않은 Password입니다!");
+
                     break;
 
                 case "403":
                     Debug.Log("차단당한 유저 or 출시설정이 테스트인데 AU가 10을 초과");
+                    logInSceneManager.showPopUp("서버 오류..!");
+
                     break;
             }
         }
@@ -182,6 +194,8 @@ public class BackendManager : MonoBehaviour
         }
         else
         {
+            logInSceneManager.showPopUp("이름 설정 실패!");
+
             Debug.LogError("이름 설정 실패 : " + bro);
         }
     }
