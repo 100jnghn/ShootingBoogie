@@ -37,7 +37,7 @@ public class JoyStick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         if (isDrag)
         {
-            player.transform.Translate(inputVec * moveSpeed);
+            player.transform.Translate(inputVec * moveSpeed * Time.deltaTime);
         }
     }
 

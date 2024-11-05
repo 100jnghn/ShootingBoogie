@@ -723,7 +723,7 @@ MonoBehaviour:
   isDrag: 0
   lever: {fileID: 720309035}
   inputVec: {x: 0, y: 0}
-  moveSpeed: 0.2
+  moveSpeed: 3.5
   leverRange: 100
 --- !u!114 &398786585
 MonoBehaviour:
