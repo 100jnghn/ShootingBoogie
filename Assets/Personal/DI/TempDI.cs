@@ -4,59 +4,18 @@ using UnityEngine;
 
 public class TempDI : MonoBehaviour
 {
-    public Transform firePos;   // 투사체 생성 위치
-    public GameObject bullet;    // 공격시 생성하는 투사체
-    public AudioSource sfxFire;  // 공격 소리 이펙트
+    public float speed = 10f;
 
-    [Header("----- Attack -----")]
-    public float attackTime = 1f;
-    private float currentTime;
-    private bool isAttackable = true;
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * speed; // 투사체가 발사 방향으로 이동
     }
 
-    // Update is called once per frame
-    void Update()
+    // 충돌 처리
+    void OnCollisionEnter(Collision collision)
     {
-        checkAttack();
-
-        // 입력 처리
-        if (Input.GetButtonDown("Fire1")) // 기본적으로 좌클릭에 바인딩
-        {
-            doFire();
-        }
-    }
-
-    // 공격 가능 상태 판단
-    void checkAttack()
-    {
-        if (!isAttackable)
-        {
-            currentTime += Time.deltaTime;
-
-            if (currentTime >= attackTime)
-            {
-                isAttackable = true;
-            }
-        }
-    }
-
-    // 공격
-    public void doFire()
-    {
-        if (!isAttackable)
-        {
-            return;
-        }
-
-        Instantiate(bullet, firePos.position, firePos.rotation);   // bullet 생성
-        sfxFire.Play();                 // sound 재생
-        
-        currentTime = 0;
-        isAttackable = false;
+        // 충돌 시 처리할 내용 (예: 적에게 피해 주기)
+        Destroy(gameObject); // 투사체 파괴
     }
 }
