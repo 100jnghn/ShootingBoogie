@@ -68,11 +68,11 @@ public class DataManager : MonoBehaviour
         {
             // GameData에서 HighScore 가져옴
             myHighScore = int.Parse(gameDataJson[0]["HIGHSCORE"].ToString());
+        }
 
-            // 가져온 최고 점수 UI에 반영
-            txtHighScore.text = " 최고 점수 : " + myHighScore.ToString();
-            txtEndPanelHighScore.text = " 최고 점수 : " + myHighScore.ToString();
-        }    
+        // 가져온 최고 점수 UI에 반영
+        txtHighScore.text = " 최고 점수 : " + myHighScore.ToString();
+        txtEndPanelHighScore.text = " 최고 점수 : " + myHighScore.ToString();
     }
 
     // 게임 종료 시 최고 기록 갱신

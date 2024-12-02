@@ -33,7 +33,7 @@ public class ShootingBullet : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(10); // 피해량 조정
+                //enemy.TakeDamage(10); // 피해량 조정
             }
         }
 

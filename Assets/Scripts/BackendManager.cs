@@ -75,15 +75,21 @@ public class BackendManager : MonoBehaviour
         Debug.Log("회원가입 요청");
 
         // Input Field가 하나라도 비어있으면 return
-        if (txtCreateAccountName.text.Length <= 0 ||
-            txtCreateAccountID.text.Length <= 0 ||
+        if (txtCreateAccountID.text.Length <= 0 ||
             txtCreateAccountPW.text.Length <= 0)
         {
             logInSceneManager.showPopUp("ID 혹은 Password를 입력하세요!");
 
             return;
         }
-        
+
+        if (txtCreateAccountName.text.Length <= 0)
+        {
+            logInSceneManager.showPopUp("올바르지 않은 이름입니다!");
+
+            return;
+        }
+
 
 
         // Input Field의 ID, PW 값
@@ -102,6 +108,10 @@ public class BackendManager : MonoBehaviour
 
             // 바로 로그인까지??
 
+            // 텍스트필드 지우기
+            txtCreateAccountName.text = "";
+            txtCreateAccountID.text = "";
+            txtCreateAccountPW.text = "";
         }
         else
         {
