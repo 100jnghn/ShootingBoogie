@@ -55,7 +55,7 @@ public class SystemDI : MonoBehaviour
         }
 
         Instantiate(bullet, firePos.position, firePos.rotation);   // bullet 생성
-        sfxFire.Play();                 // sound 재생
+        sfxFire.Play();       // sound 재생
         
         currentTime = 0;
         isAttackable = false;
