@@ -34,15 +34,6 @@ public class ShootingBullet : MonoBehaviour
         Destroy(gameObject); // 투사체 파괴
     }
 
-    public float lifeTime = 3f; // 투사체 생명 시간
-
-    void Start()
-    {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * speed; // 투사체가 발사 방향으로 이동
-        Destroy(gameObject, lifeTime); // 일정 시간 후 투사체 파괴
-    }
-
 
     public GameObject hitEffect; // 충돌 이펙트 프리팹
 
@@ -54,5 +45,11 @@ public class ShootingBullet : MonoBehaviour
         }
         Destroy(gameObject); // 투사체 파괴
     }
+
+    public void Initialize(Vector3 direction)
+{
+    Rigidbody rb = GetComponent<Rigidbody>();
+    rb.velocity = direction.normalized * speed; // 주어진 방향으로 이동
+}
 
 }

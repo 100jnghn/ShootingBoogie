@@ -8,6 +8,7 @@ public class SystemDI : MonoBehaviour
     public GameObject bullet;    // 공격시 생성하는 투사체
     public AudioSource sfxFire;  // 공격 소리 이펙트
 
+
     [Header("----- Attack -----")]
     public float attackTime = 1f;
     private float currentTime;
