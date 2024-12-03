@@ -25,7 +25,7 @@ public class ShootingBullet : MonoBehaviour
         // 생명 시간이 다 되어 가면 색상 변화
         if (bulletRenderer != null)
         {
-            float timeLeft = lifeTime - Time.time + gameObject.GetComponent<Destroy>().creationTime;
+            float timeLeft = lifeTime - Time.time;
             if (timeLeft < 1f) // 남은 시간이 1초 이하일 때
             {
                 bulletRenderer.material.color = warningColor; // 색상 변화
@@ -50,7 +50,7 @@ public class ShootingBullet : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage); // 피해량 적용
+                //enemy.TakeDamage(damage); // 피해량 적용
             }
         }
 
