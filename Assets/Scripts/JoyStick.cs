@@ -69,6 +69,7 @@ public class JoyStick : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         // 화면 좌표를 RectTransform의 로컬 좌표로 변환
         Vector2 localPoint;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform, eventData.position, eventData.pressEventCamera, out localPoint);
+        
 
         // 입력 위치가 조이스틱 범위를 넘지 않도록 계산
         Vector2 rangeDir = localPoint.magnitude < leverRange ? localPoint : localPoint.normalized * leverRange;
