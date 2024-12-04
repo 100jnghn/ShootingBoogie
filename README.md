@@ -4,4 +4,4 @@
 #### ⬇️ Click IMG to play with youtube ⬇️
 <br>
 
-[![ShootingBoogie](https://img.youtube.com/FwppFrsJ_so/0.jpg)](https://youtube.com/FwppFrsJ_so?5=0s)
+[![ShootingBoogie](http://img.youtube.com/vi/FwppFrsJ_so/0.jpg)](https://youtu.be/FwppFrsJ_so?t=0s)
