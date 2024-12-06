@@ -75,6 +75,7 @@
 회원가입 시에 등록한 정보를 '뒤끝 Backend' 서버에 저장합니다.<br>
 ID, UID, 가입일, 최근 접속일, 접속 환경(OS, 기기 등) 다양한 정보를 Database에 저장합니다.<br>
 <br>
+<br>
 
 #### - 게임 기록 저장
 ![image](https://github.com/user-attachments/assets/e2032486-e4bc-4674-a546-7b0302e758f1)
@@ -85,7 +86,30 @@ ID, UID, 가입일, 최근 접속일, 접속 환경(OS, 기기 등) 다양한 �
 
 ## 4. 서버 관련 코드 설명
 ### <Auth>
+#### - 회원 가입
 ![image](https://github.com/user-attachments/assets/5107ed44-9722-4062-95fd-b4d53085e699)
+회원 가입 시에 등록한 정보를 Backend 서버에 전송합니다.<br>
+<br>
+<br>
+
+#### - 예외 처리
+![image](https://github.com/user-attachments/assets/ce4f326c-f4b8-4b24-ae1e-496f19be3344)
+사용할 수 없는 ID이거나 서버 오류 등 회원가입 시 발생할 수 있는 다양한 에러 상황을 분류하여 사용자에게 알려줍니다.<br>
+<br>
+<br>
+
+### <Data>
+#### - Data Fetching
+![image](https://github.com/user-attachments/assets/40c36187-3843-4819-9d68-a11cab8929c9)
+게임이 시작되면 서버에 저장된 플레이어의 데이터를 Json 형식으로 가져오고 Parsing을 통해 
+<br>
+<br>
+
+#### - Data Transmission
+![image](https://github.com/user-attachments/assets/a7e3d33a-59ef-4390-b2c7-d726d623ba24)
+
+
+
 
 
 
