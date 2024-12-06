@@ -14,7 +14,7 @@
 ## 1. 사용 기술
 <img src="https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white"/> <img src="https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white"/>
 <br>
-- Target Flatform: Android, IOS (Cross Flatform)
+- Target Flatform: ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) ![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white) (Cross Flatform) 
 - 뒤끝 Backend Service
 - Editor Version: 2022.3.21f1 LTS
 <br>
